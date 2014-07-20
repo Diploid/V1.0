@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Diploid</title>
+</h:head>
+<h:body>
+
+	<h:panelGrid id="panelGridForButtons" columns="2"
+		style="border-style: hidden; margin-left: 900px;">
+
+		<h:outputText value="#{homeBean.userName}" escape="false"
+			style="margin-right:20px; " />
+		<p:commandLink value="Sign Out" id="idSignOut" style="color: #00BEFE;"
+			styleClass="ui-priority-primary" action="registration.xhtml" />
+	</h:panelGrid>
+
+	<p:tabView style=" float:center; margin-left:100px; margin-right:225px">
+		<p:tab title="Data Upload/Download">
+			<h:panelGrid columns="2" cellpadding="10">
+				<ui:insert name="content" class="ui-widget"
+					style="">
+					<ui:include src="dataUploadDownload.xhtml" />
+				</ui:insert>
+			</h:panelGrid>
+		</p:tab>
+		<p:tab title="Design Workflow">
+			<h:panelGrid columns="2" cellpadding="10">
+				<ui:insert name="content" class="ui-widget"
+					style="">
+					<ui:include src="designWorkflow.xhtml" />
+				</ui:insert>
+			</h:panelGrid>
+		</p:tab>
+		<p:tab title="Progress Status">
+			<h:panelGrid columns="2" cellpadding="10">
+				<ui:insert name="content" class="ui-widget"
+					style="">
+					<ui:include src="progressReport.xhtml" />
+				</ui:insert>
+			</h:panelGrid>
+		</p:tab>
+		<p:tab title="Response Form">
+			<h:panelGrid columns="2" cellpadding="10">
+				<ui:insert name="content" class="ui-widget"
+					style="">
+					<ui:include src="responseForm.xhtml" />
+				</ui:insert>
+			</h:panelGrid>
+		</p:tab>
+	</p:tabView>
+</h:body>
+</html>
