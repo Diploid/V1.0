@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Diploid/ProgressReport</title>
+</h:head>
+<h:body>
+	<p:panelGrid columns="1"
+		style="border-style: hidden !important; color:#FFFFFF; ">
+		<p:panel style="border-style: hidden !important; color:#FFFFFF; ">
+			<h:form>
+				<p:growl id="growl" />
+				<h:panelGrid columns="3" border="0" style="float: center; ">
+
+					<h:outputLabel value="Format Conversion"
+						style="width: 400px; " />
+					<p:progressBar widgetVar="pbAjax" ajax="true"
+						id="idProgressBarFormateConversion1"
+						style="width: 300px; margin-left: 20px;"
+						value="#{progressBarView.progress}" labelTemplate="{value}%"
+						styleClass="animated" global="false">
+						<p:ajax event="complete" listener="#{progressBarView.onComplete}"
+							update="growl" oncomplete="startButton2.enable()" />
+					</p:progressBar>
+					<p:commandButton value="Preview Output"
+						id="idButtonPreviewFormateConversion1"
+						style="width: 170px; margin-left: 20px;" ajax="false"></p:commandButton>
+
+
+					<h:outputLabel value="Splitting"
+						style="width: 400px;" />
+					<p:progressBar widgetVar="pbAjax" ajax="true"
+						id="idProgressBarSplitting"
+						style="width: 300px; margin-left: 20px;"
+						value="#{progressBarView.progress}" labelTemplate="{value}%"
+						styleClass="animated" global="false">
+						<p:ajax event="complete" listener="#{progressBarView.onComplete}"
+							update="growl" oncomplete="startButton2.enable()" />
+					</p:progressBar>
+					<p:commandButton value="Abort" id="idButtonAbortSplitting"
+						style="width: 170px; margin-left: 20px;" ajax="false"></p:commandButton>
+
+
+					<h:outputLabel value="Filtering"
+						style="width: 400px; " />
+					<p:progressBar widgetVar="pbAjax" ajax="true"
+						id="idProgressBarFiltering"
+						style="width: 300px; margin-left: 20px;"
+						value="#{progressBarView.progress}" labelTemplate="{value}%"
+						styleClass="animated" global="false">
+						<p:ajax event="complete" listener="#{progressBarView.onComplete}"
+							update="growl" oncomplete="startButton2.enable()" />
+					</p:progressBar>
+					<p:commandButton value="Download Log"
+						id="idButtonDownloadLogFiltering"
+						style="width: 170px; margin-left: 20px;" ajax="false"></p:commandButton>
+
+
+					<h:outputLabel value="Alignment"
+						style="width: 400px;" />
+					<p:progressBar widgetVar="pbAjax" ajax="true"
+						id="idProgressBarAlignment"
+						style="width: 300px; margin-left: 20px;"
+						value="#{progressBarView.progress}" labelTemplate="{value}%"
+						styleClass="animated" global="false">
+						<p:ajax event="complete" listener="#{progressBarView.onComplete}"
+							update="growl" oncomplete="startButton2.enable()" />
+					</p:progressBar>
+					<p:commandButton value="Abort" id="idButtonAbortAlignment"
+						style="width: 170px; margin-left: 20px;" ajax="false"></p:commandButton>
+
+
+					<h:outputLabel value="Pick Calling"
+						style="width: 400px;" />
+					<p:progressBar widgetVar="pbAjax" ajax="true"
+						id="idProgressBarPickCalling"
+						style="width: 300px; margin-left: 20px;"
+						value="#{progressBarView.progress}" labelTemplate="{value}%"
+						styleClass="animated" global="false">
+						<p:ajax event="complete" listener="#{progressBarView.onComplete}"
+							update="growl" oncomplete="startButton2.enable()" />
+					</p:progressBar>
+					<p:commandButton value="Abort" id="idButtonAbortPickCalling"
+						style="width: 170px; margin-left: 20px;" ajax="false"></p:commandButton>
+
+
+					<h:outputLabel value="Reproductive Rate Calculation"
+						style="width: 400px; " />
+					<p:progressBar widgetVar="pbAjax" ajax="true"
+						id="idProgressBarReproductiveRateCalculation"
+						style="width: 300px; margin-left: 20px;"
+						value="#{progressBarView.progress}" labelTemplate="{value}%"
+						styleClass="animated" global="false">
+						<p:ajax event="complete" listener="#{progressBarView.onComplete}"
+							update="growl" oncomplete="startButton2.enable()" />
+					</p:progressBar>
+					<p:commandButton value="Abort"
+						id="idButtonAbortReproductiveRateCalculation"
+						style="width: 170px; margin-left: 20px;" ajax="false"></p:commandButton>
+
+
+					<h:outputLabel value="Format Conversion"
+						style="width: 400px; " />
+					<p:progressBar widgetVar="pbAjax" ajax="true"
+						id="idProgressBarFormatConversion2"
+						style="width: 300px; margin-left: 20px;"
+						value="#{progressBarView.progress}" labelTemplate="{value}%"
+						styleClass="animated" global="false">
+						<p:ajax event="complete" listener="#{progressBarView.onComplete}"
+							update="growl" oncomplete="startButton2.enable()" />
+					</p:progressBar>
+					<p:commandButton value="Abort" id="idButtonAbortFormatConversion2"
+						style="width: 170px; margin-left: 20px;" ajax="false"></p:commandButton>
+
+
+					<h:outputLabel value="Format Conversion"
+						style="width: 400px; " />
+					<p:progressBar widgetVar="pbAjax" ajax="true"
+						id="idProgressBarFormatConversion3"
+						style="width: 300px; margin-left: 20px;"
+						value="#{progressBarView.progress}" labelTemplate="{value}%"
+						styleClass="animated" global="false">
+						<p:ajax event="complete" listener="#{progressBarView.onComplete}"
+							update="growl" oncomplete="startButton2.enable()" />
+					</p:progressBar>
+					<p:commandButton value="Abort" id="idButtonAbortFormatConversion3"
+						style="width: 170px; margin-left: 20px;" ajax="false"></p:commandButton>
+
+
+
+
+				</h:panelGrid>
+			</h:form>
+		</p:panel>
+	</p:panelGrid>
+</h:body>
+</html>

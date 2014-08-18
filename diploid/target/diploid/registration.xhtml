@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Diploid/Registration</title>
+</h:head>
+<h:body>
+	<p:panelGrid columns="2"
+		style="border-style: hidden !important; color:#FFFFFF; margin-left: 50px;">
+		<p:panel
+			style="border-style: hidden !important; color:#FFFFFF; width: 500px;"
+			widgetVar="regWidget">
+			<f:facet name="first" style="float: center; width: 500px;">
+	Register
+  </f:facet>
+			<h2
+				style="margin-left: 250px; margin-bottom: 100px; float: center; width: 500px;">Register</h2>
+			<h:form id="idRegistration">
+
+				<h:panelGrid columns="3" width="500px" border="0">
+
+					<h:outputLabel value="Name" />
+					<p:inputText value="#{registrationBean.userName}"
+						id="name" required="true" requiredMessage="Name is required"
+						validatorMessage="Name should be of length from 5 to 15 chars">
+						<f:validateLength minimum="5" maximum="15" for="name"></f:validateLength>
+					</p:inputText>
+					<p:message for="name" />
+
+					<h:outputLabel value="Email" />
+					<p:inputText value="#{registrationBean.email}"
+						id="email" validatorMessage="Invalid Email">
+						<f:validateRegex pattern="[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}"></f:validateRegex>
+					</p:inputText>
+					<p:message for="email" />
+
+
+					<h:outputLabel value="Password" />
+					<p:password value="#{registrationBean.password}"
+						id="password" required="true"
+						requiredMessage="Password is required"
+						validatorMessage="Password should be of length from 5 to 15 chars">
+						<f:validateLength minimum="5" maximum="15" for="password"></f:validateLength>
+					</p:password>
+					<p:message for="password" />
+					<h:outputLabel value="Repeat Password" />
+					<p:password value="#{registrationBean.repeatPassword}"
+						id="repeatPassword" required="true"
+						requiredMessage="Password is required"
+						validatorMessage="Password should be of length from 5 to 15 chars">
+						<f:validateLength minimum="5" maximum="15" for="repeatPassword"></f:validateLength>
+					</p:password>
+					<p:message for="repeatPassword" />
+
+					<h:outputLabel value="" />
+					<h:panelGrid columns="3" border="0">
+						<p:selectBooleanCheckbox id="termsAndCondition" value="#{registrationBean.termsAndCondition}">
+						</p:selectBooleanCheckbox>
+						<h:outputLabel value="I agree to Diploid" />
+						<p:commandLink value="terms and condition"
+							style=" text-decoration: underline; color: #00BEFE" />
+					</h:panelGrid>
+					<h:outputLabel value="" />
+					<h:outputLabel value="" />
+					<p:commandButton value="Register"
+						action="#{registrationBean.addRegister}" ajax="false"></p:commandButton>
+				</h:panelGrid>
+
+			</h:form>
+		</p:panel>
+		<p:panel
+			style="border-style: hidden !important; border: none;  color:#FFFFFF; width: 500px;">
+			<h2
+				style="margin-left: 250px; margin-bottom: 100px; float: center; width: 500px;">Login</h2>
+			<h:form>
+
+
+				<h:panelGrid columns="3" width="500px" border="0">
+					<h:outputLabel value="Email" />
+					<p:inputText value="#{registrationBean.email}"
+						id="emailForLogin" validatorMessage="Invalid Email">
+						<f:validateRegex pattern="[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}"></f:validateRegex>
+					</p:inputText>
+					<p:message for="emailForLogin" />
+
+
+					<h:outputLabel value="Password" />
+					<p:password value="#{registrationBean.password}"
+						id="passwordForLogin" required="true"
+						requiredMessage="Password is required"
+						validatorMessage="Password should be of length from 5 to 15 chars">
+						<f:validateLength minimum="5" maximum="15" for="passwordForLogin"></f:validateLength>
+					</p:password>
+					<p:message for="passwordForLogin" />
+
+					<h:outputLabel value="" />
+					<h:panelGrid columns="2" border="0">
+						<p:selectBooleanCheckbox id="rememberOnComputer">
+						</p:selectBooleanCheckbox>
+						<h:outputLabel value="Remember me on this computer" />
+					</h:panelGrid>
+					<h:outputLabel value="" />
+					<h:outputLabel value="" />
+					<p:commandButton value="Login"
+						action="#{registrationBean.getLogin}" ajax="false"></p:commandButton>
+				</h:panelGrid>
+
+			</h:form>
+		</p:panel>
+
+
+	</p:panelGrid>
+</h:body>
+</html>
