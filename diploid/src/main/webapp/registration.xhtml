@@ -24,7 +24,7 @@
 				<h:panelGrid columns="3" width="500px" border="0">
 
 					<h:outputLabel value="Name" />
-					<p:inputText value="#{registrationBean.registrationForm.userName}"
+					<p:inputText value="#{registrationBean.userName}"
 						id="name" required="true" requiredMessage="Name is required"
 						validatorMessage="Name should be of length from 5 to 15 chars">
 						<f:validateLength minimum="5" maximum="15" for="name"></f:validateLength>
@@ -32,7 +32,7 @@
 					<p:message for="name" />
 
 					<h:outputLabel value="Email" />
-					<p:inputText value="#{registrationBean.registrationForm.email}"
+					<p:inputText value="#{registrationBean.email}"
 						id="email" validatorMessage="Invalid Email">
 						<f:validateRegex pattern="[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}"></f:validateRegex>
 					</p:inputText>
@@ -40,7 +40,7 @@
 
 
 					<h:outputLabel value="Password" />
-					<p:password value="#{registrationBean.registrationForm.password}"
+					<p:password value="#{registrationBean.password}"
 						id="password" required="true"
 						requiredMessage="Password is required"
 						validatorMessage="Password should be of length from 5 to 15 chars">
@@ -48,7 +48,7 @@
 					</p:password>
 					<p:message for="password" />
 					<h:outputLabel value="Repeat Password" />
-					<p:password value="#{registrationBean.registrationForm.password}"
+					<p:password value="#{registrationBean.repeatPassword}"
 						id="repeatPassword" required="true"
 						requiredMessage="Password is required"
 						validatorMessage="Password should be of length from 5 to 15 chars">
@@ -58,7 +58,7 @@
 
 					<h:outputLabel value="" />
 					<h:panelGrid columns="3" border="0">
-						<p:selectBooleanCheckbox id="termsAndCondition">
+						<p:selectBooleanCheckbox id="termsAndCondition" value="#{registrationBean.termsAndCondition}">
 						</p:selectBooleanCheckbox>
 						<h:outputLabel value="I agree to Diploid" />
 						<p:commandLink value="terms and condition"
@@ -67,7 +67,7 @@
 					<h:outputLabel value="" />
 					<h:outputLabel value="" />
 					<p:commandButton value="Register"
-						action="#{registrationBean.register}" ajax="false"></p:commandButton>
+						action="#{registrationBean.addRegister}" ajax="false"></p:commandButton>
 				</h:panelGrid>
 
 			</h:form>
@@ -81,7 +81,7 @@
 
 				<h:panelGrid columns="3" width="500px" border="0">
 					<h:outputLabel value="Email" />
-					<p:inputText value="#{registrationBean.registrationForm.email}"
+					<p:inputText value="#{registrationBean.email}"
 						id="emailForLogin" validatorMessage="Invalid Email">
 						<f:validateRegex pattern="[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}"></f:validateRegex>
 					</p:inputText>
@@ -89,7 +89,7 @@
 
 
 					<h:outputLabel value="Password" />
-					<p:password value="#{registrationBean.registrationForm.password}"
+					<p:password value="#{registrationBean.password}"
 						id="passwordForLogin" required="true"
 						requiredMessage="Password is required"
 						validatorMessage="Password should be of length from 5 to 15 chars">
@@ -106,7 +106,7 @@
 					<h:outputLabel value="" />
 					<h:outputLabel value="" />
 					<p:commandButton value="Login"
-						action="#{registrationBean.register}" ajax="false"></p:commandButton>
+						action="#{registrationBean.getLogin}" ajax="false"></p:commandButton>
 				</h:panelGrid>
 
 			</h:form>

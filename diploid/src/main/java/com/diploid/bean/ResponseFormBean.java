@@ -150,12 +150,12 @@ public class ResponseFormBean implements Serializable {
 				+ ";" + dropdown4 + ";" + dropdown5 + ";" + dropdown6 + ";"
 				+ dropdown7 + ";" + dropdown8 + ";" + dropdown9 + ";"
 				+ dropdown10;
-		
+
 		ResponseForm responseForm = new ResponseForm(responseFromUser);
 
 		try {
 
-			new DMSServiceClient().AddEntryUI(responseForm);
+			new DMSServiceClient().AddResponseForm(responseForm);
 		} catch (Exception e) {
 			logger.error(e.toString());
 			FacesContext.getCurrentInstance().addMessage(

@@ -7,6 +7,7 @@ package com.diploid.entity;
 import java.io.Serializable;
 
 import javax.jdo.annotations.Column;
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 
@@ -20,9 +21,8 @@ public class ResponseForm implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	@Persistent
-	@Column(name = "userResponse", jdbcType = "VARCHAR", length = 400)
+
+	@Persistent(valueStrategy = IdGeneratorStrategy.INCREMENT)
 	private long id;
 
 	@Persistent
